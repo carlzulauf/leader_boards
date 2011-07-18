@@ -5,6 +5,7 @@ gem 'rack-jsonp'
 gem 'redis'
 gem 'redis-native_hash',  :git => "git@lyconic.com:redis-native_hash"
 gem 'sinatra'
+gem 'haml'
 
 group :development do
   gem 'sinatra-reloader'
