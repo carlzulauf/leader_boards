@@ -7,6 +7,6 @@
     %tr
       %td
         %a{:href => "/visit/#{visit.key}"}= visit.key
-      %td= visit['REQUEST_PATH']
+      %td= visit['REQUEST_PATH'] || visit['REQUEST_URI']
       %td= visit['HTTP_USER_AGENT']
 
