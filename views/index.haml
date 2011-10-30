@@ -1,6 +1,7 @@
-%h2 logger#to_yaml
-%pre= @logger.to_yaml
+%h1 Top scores
 
-%h2 request#to_yaml
-%pre= request.to_yaml
-
+- @game.boards.each do |board|
+  %h3= board.name
+  %ol
+    - board.top.each do |score|
+      %li= "#{score.name}: #{score.score} at #{Time.at(score.submitted_at)}"

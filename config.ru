@@ -4,13 +4,8 @@ require 'rack/jsonp'
 require 'sinatra'
 require 'redis/native_hash'
 
-require './lib/visit_logger'
-require './apitest'
-
-$redis = Redis.new
-Redis::NativeHash.redis = $redis
+require './leader_boards'
 
 use Rack::JSONP
 
-run LeaderBoards::ApiTest
-
+run LeaderBoards::API

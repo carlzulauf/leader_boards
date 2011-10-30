@@ -1,0 +1,15 @@
+%h1 Submit high score
+
+%p= "Params: #{params.inspect}"
+%p= "env: #{env.keys}"
+%p= "IP: #{env['REMOTE_ADDR']}"
+
+%form{method: 'get', action: '/submit'}
+  %p
+    Your name:
+    %input{type: 'text', name: 'name'}
+  %p
+    Score:
+    %input{type: 'text', name: 'score'}
+  %p
+    %input{type: 'submit'}
