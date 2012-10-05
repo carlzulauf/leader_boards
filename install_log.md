@@ -16,9 +16,13 @@ First, logged in as root and created user `carl`. By adding `carl` to `sudo` gro
     $ usermod -a -G sudo carl
     $ groups carl
     => carl : carl sudo
-    $ exit
 
-SSH as `carl` to IP address. Works. Make `.ssh` directory.
+Next, edit `/etc/ssh/sshd_config` to disable root account access and turn off password authentication (keys only). Here are the relevant changes:
+
+    PermitRootLogin no
+    PasswordAuthentication no
+
+Exit root ssh session then ssh as `carl` to IP address. Works. Make `.ssh` directory.
 
     $ mkdir .ssh
 
