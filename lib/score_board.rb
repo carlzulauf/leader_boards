@@ -40,7 +40,7 @@ class ScoreBoard
       game.order == :desc ? :zrevrange : :zrange,
       "#{game.namespace}:#{name}",
       (page - 1) * limit,
-      limit * page
+      (limit * page) - 1
     )
     list = []
     return list if top_keys.empty?

@@ -1,9 +1,9 @@
 GIT
-  remote: git@lyconic.com:redis-native_hash
-  revision: 4bc144d3474743e4de558358d520c275786771fd
+  remote: git@github.com:carlzulauf/redis-native_hash
+  revision: 667475ff40002506fb1fc373802f84e1e148c787
   specs:
-    redis-native_hash (0.2.0)
-      redis (>= 2.0.0)
+    redis-native_hash (0.2.2)
+      redis (~> 2.2.0)
 
 GEM
   remote: http://rubygems.org/
