@@ -160,3 +160,8 @@ Only 3 scores in redis. Lets try to flood the system with values using blitz.io 
 
 Holy shit. Writes don't slow down until 180 requests/second, and then still keep inching up. More than twice as fast as showing the leader board. Guessing blitz stops at the redirect, so this measures pure ruby-to-redis performance with no template (haml) rendering.
 
+Lets see how the performance of showing the leaders changes when there is a lot more data. Basically, re-run the first blitz.io test.
+
+    --pattern 1-250:60 --timeout 10000 http://leaders.linkleaf.com/
+
+Tops out around ~16 requests/second, then starts erroring. Terrible. Enough for tonight. Create image of server on rackspace. Delete server. Tomorrow we'll see how nginx+unicorn compare.
